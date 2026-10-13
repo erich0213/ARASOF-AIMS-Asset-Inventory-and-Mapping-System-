@@ -1,0 +1,46 @@
+CAMPUS ASSET MAPPING SYSTEM
+
+Entities and Attributes
+
+1. CampusAsset
+   - PropertyNo
+   - ItemName
+   - BrandModel
+   - SerialNo
+   - CurrentCondition
+   - CategoryID
+   - RoomID
+   - DepartmentID
+   - DateAcquired
+
+2. CampusBuilding
+   - BuildingID
+   - BuildingName
+   - BuildingCode
+   - TotalFloors
+   - GISID
+
+3. FacilityRoom
+   - RoomID
+   - RoomNumber / RoomCode
+   - RoomType
+   - FloorLevel
+   - BuildingID
+
+4. AssetCategory
+   - CategoryID
+   - CategoryName
+   - Description
+
+5. CollegeDepartment
+   - DepartmentID
+   - DepartmentName
+   - DepartmentCode
+   - DepartmentHead / Custodian
+
+6. GISCoordinate
+   - GISID
+   - Latitude
+   - Longitude
+   - MapPinLabel
+   - ZoneArea

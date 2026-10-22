@@ -1,0 +1,38 @@
+CAMPUS ASSET MAPPING SYSTEM - DIAGRAMS & SYSTEM DESIGN
+
+1. ENTITY RELATIONSHIP (ERD) STRUCTURE
+-----------------------------------------------------
+- CollegeDepartment (1) ------ (N) CampusAsset
+  > DepartmentID (Primary Key)
+  > DepartmentName, DepartmentCode, Custodian
+
+- AssetCategory (1) --------- (N) CampusAsset
+  > CategoryID (Primary Key)
+  >  CategoryName, Description
+
+- CampusBuilding (1) -------- (N) FacilityRoom
+  > BuildingID (Primary Key)
+  > BuildingName, BuildingCode, TotalFloors
+
+- CampusBuilding (1) -------- (1) GISCoordinate
+  > GISID (Primary Key)
+  > Latitude, Longitude, MapPinLabel, ZoneArea
+
+- FacilityRoom (1) ---------- (N) CampusAsset
+  > RoomID (Primary Key)
+  > RoomNumber, RoomType, FloorLevel
+
+
+2. SYSTEM ARCHITECTURE & DATA FLOW
+-----------------------------------------------------
+[ Campus Admin / Asset Custodian ]
+              |
+              v
+[ Android Mobile Application (Kotlin UI) ]
+  - Input & Update Asset Details
+  - Campus Map Visualizer Screen
+              |
+              v
+[ Local SQLite Database & GIS Mapping ]
+  - Saves property and room records locally
+  - Plots location coordinates on campus map	
